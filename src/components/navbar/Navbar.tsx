@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex items-center place-content-center bg-black/10 p-4 w-full backdrop-blur-md fixed gap-10 left-0 top-0">
+    <nav className="flex items-center place-content-center bg-black/10 p-4 w-full backdrop-blur-md fixed gap-10 left-0 top-0 z-2">
       {["home", "projects", "about", "contact"].map((item) => {
         const path = item === "home" ? "/" : `/${item.toLowerCase()}`;
         return (
