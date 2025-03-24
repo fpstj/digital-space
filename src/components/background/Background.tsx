@@ -45,7 +45,7 @@ const Background: React.FC = () => {
       {label && (
         <div
           className={`fixed z-0 pointer-events-none ${label.className}`}
-          style={{ fontFamily: '"DM Serif Text", serif' }}
+          style={{ fontFamily: '"Playfair Display", serif' }}
         >
           {label.text}
         </div>
