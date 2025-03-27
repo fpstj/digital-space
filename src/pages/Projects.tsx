@@ -10,7 +10,7 @@ import project7 from "../assets/images/img7.jpg";
 import project8 from "../assets/images/img8.jpg";
 import project9 from "../assets/images/img9.jpg";
 import project10 from "../assets/images/img10.jpg";
-import "./Projects.css";
+import "./HideScrollbar.css";
 
 const projects = [
   {
@@ -67,23 +67,23 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen w-full">
       {/* Fixed Navbar on top */}
       <Navbar />
 
       {/* Main content wrapper below navbar */}
-      <div className="pt-20 px-6 h-full flex flex-col">
+      <div className="pt-20 h-full flex flex-col w-full">
         {/* Sticky h1 (fixed height so we can offset scroll below it) */}
-        <h1 className="text-5xl font-bold text-white sticky top-[64px] z-10 py-4">
+        <h1 className="text-5xl font-bold text-stone sticky top-[64px] z-10 py-4">
           Projects
         </h1>
 
         {/* Scrollable Projects Grid below h1 */}
         <div
-          className="overflow-y-auto mt-4 pr-2 mb-4 no-scrollbar"
+          className="overflow-y-auto mt-4 mb-4 no-scrollbar w-full"
           style={{ maxHeight: "calc(100vh - 144px)" }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full">
             {projects.map((project, idx) => (
               <div
                 key={idx}
@@ -92,14 +92,14 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
+                  className="w-full h-94 object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
                 />
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Text on hover */}
-                <div className="absolute bottom-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 p-4 text-stone opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h2 className="text-xl font-semibold">{project.title}</h2>
                   <p className="text-sm">{project.description}</p>
                 </div>
