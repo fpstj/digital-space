@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/navbar/Navbar";
 import project1 from "../assets/images/img1.jpg";
 import project2 from "../assets/images/img2.jpg";
 import project3 from "../assets/images/img3.jpg";
@@ -68,9 +67,6 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="relative h-screen w-full">
-      {/* Fixed Navbar on top */}
-      <Navbar />
-
       {/* Main content wrapper below navbar */}
       <div className="pt-20 h-full flex flex-col w-full">
         {/* Sticky h1 (fixed height so we can offset scroll below it) */}
