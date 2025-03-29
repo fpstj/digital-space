@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Contact: React.FC = () => {
@@ -28,7 +29,7 @@ const Contact: React.FC = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Reset error messages
@@ -64,9 +65,28 @@ const Contact: React.FC = () => {
     }
 
     // If the form is valid, handle the form submission (e.g., send email)
-    if (isValid) {
-      console.log("Form submitted:", formData);
-      // Implement your email sending logic here
+    if (!isValid) return;
+
+    try {
+      const result = await emailjs.send(
+        "service_wiztl2n",
+        "template_e5bewxr",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        "CpvU8edlEliPWLPPY"
+      );
+
+      console.log("Email successfully sent!", result.text);
+      alert("Your message was sent successfully!");
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      alert("Something went wrong. Please try again later.");
     }
   };
 
