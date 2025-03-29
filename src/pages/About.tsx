@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
 import "./HideScrollbar.css"; // Optional, depending on your existing styles
 
 const aboutContent = [
@@ -44,9 +44,6 @@ const aboutContent = [
 const About: React.FC = () => {
   return (
     <div className="relative h-screen w-full">
-      {/* Fixed Navbar on top */}
-      <Navbar />
-
       {/* Main content wrapper below navbar */}
       <div className="pt-20 h-full flex flex-col w-full">
         {/* Container for consistent width */}
