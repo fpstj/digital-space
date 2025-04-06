@@ -45,7 +45,7 @@ const About: React.FC = () => {
   return (
     <div className="relative h-screen w-full">
       {/* Main content wrapper below navbar */}
-      <div className="pt-20 h-full flex flex-col w-full">
+      <div className="flex flex-col pt-20 px-8 sm:px-16 md:px-32 lg:px-50 h-full w-full">
         {/* Container for consistent width */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Sticky h1 (now within the same container as content) */}
