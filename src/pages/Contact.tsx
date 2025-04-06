@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className="relative h-screen w-full p-0 m-0">
-      <div className="flex flex-col items-start justify-center h-screen px-0 sm:px-1 md:px-2 lg:px-[4rem] xl:px-[8rem]">
+      <div className="flex flex-col items-start justify-center h-screen px-8 sm:px-16 md:px-32 lg:px-50">
         <h1
           className="font-bold text-5xl sm:text-4xl md:text-6xl lg:text-7xl text-stone-50 mb-4"
           style={{ fontFamily: '"Montserrat", sans-serif' }}
