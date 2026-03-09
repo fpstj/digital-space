@@ -1,61 +1,85 @@
 import React from "react";
-import project11 from "../assets/images/img11.jpg";
-import project12 from "../assets/images/img12.jpg";
-import project13 from "../assets/images/img13.jpg";
-import project14 from "../assets/images/img14.jpg";
-import project15 from "../assets/images/img15.jpg";
-import project16 from "../assets/images/img16.jpg";
-import project17 from "../assets/images/img17.jpg";
-import project18 from "../assets/images/img18.jpg";
+import peak2port from "../assets/images/peak2port-browser-mockup-geometric.png";
+import BDMSystems from "../assets/images/bdmsystems-browser-mockup-geometric.png";
+import colocvial from "../assets/images/colocvial-browser-mockup-geometric.png";
+import meetup from "../assets/images/meetup-browser-mockup-geometric.png";
+import thinkerai from "../assets/images/thinker-browser-mockup-geometric.png";
+import alectoo from "../assets/images/alectoo-browser-mockup-geometric.png";
+import WeSystems from "../assets/images/wesystems-browser-mockup-geometric.png";
+import MyCallCentral from "../assets/images/teams-client-app-browser-mockup-geometric.png";
+import ContractHub from "../assets/images/contract-hub-browser-mockup-geometric.png";
+import jansson from "../assets/images/jansson-browser-mockup-geometric.png";
 import "./HideScrollbar.css";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A short description about project 1.",
-    image: project11,
+    title: "Peak2Port",
+    description:
+      "Modern website for cyclists connecting riders with guides, mechanics, support vehicles, and curated local routes. Built with React, TypeScript, and Tailwind CSS, featuring animations, dark/light mode, and performance optimization.",
+    image: peak2port,
     link: "https://peak2port.vercel.app/",
   },
   {
-    title: "Project 2",
-    description: "A short description about project 2.",
-    image: project12,
+    title: "BDM Systems",
+    description:
+      "Dashboard system for managing building utilities, finances, facilities, and resident services. Designed in Figma and currently implemented as a React frontend.",
+    image: BDMSystems,
     link: "https://infoteam-solution.vercel.app/",
   },
   {
-    title: "Project 3",
-    description: "A short description about project 3.",
-    image: project13,
+    title: "Colocvial",
+    description:
+      "Professional website UI concept for an IT services company. Fully designed in Figma with implementation planned.",
+    image: colocvial,
     link: "",
   },
   {
-    title: "Project 4",
-    description: "A short description about project 4.",
-    image: project14,
+    title: "Meetup",
+    description:
+      "Concept mobile communication app for messaging, calls, and file sharing. Designed in Figma as a foundation for a future platform.",
+    image: meetup,
     link: "",
   },
   {
-    title: "Project 5",
-    description: "A short description about project 5.",
-    image: project15,
+    title: "Thinker AI",
+    description:
+      "Modern UI concept for interacting with multiple AI agents in a single interface. Designed in Figma with a focus on usability and scalable AI workflows.",
+    image: thinkerai,
     link: "",
   },
   {
-    title: "Project 6",
-    description: "A short description about project 6.",
-    image: project16,
+    title: "myportal.alectoo",
+    description:
+      "Analytics dashboard for managing telecom phone number ranges across regions. Contributed to UI design and React frontend implementation.",
+    image: alectoo,
     link: "",
   },
   {
-    title: "Project 7",
-    description: "A short description about project 7.",
-    image: project17,
+    title: "WeSystems",
+    description:
+      "Call center management platform for handling calls, routing, scheduling, and call transcription. Designed the UI in Figma and implemented the frontend.",
+    image: WeSystems,
     link: "",
   },
   {
-    title: "Project 8",
-    description: "A short description about project 8.",
-    image: project18,
+    title: "MyCallCentral",
+    description:
+      "Call center management platform for handling calls, routing, scheduling, and call transcription. Designed the UI in Figma and implemented the frontend.",
+    image: MyCallCentral,
+    link: "",
+  },
+  {
+    title: "ContractHub",
+    description:
+      "Modern dashboard UI for managing contracts and related documents. Designed in Figma and prepared for future implementation based on client requirements.",
+    image: ContractHub,
+    link: "",
+  },
+  {
+    title: "jansson.myportal",
+    description:
+      "Internal management dashboard for the company Jansson. Designed the UI and dashboard structure in Figma.",
+    image: jansson,
     link: "",
   },
 ];
@@ -92,8 +116,20 @@ const Projects: React.FC = () => {
 
                 {/* Text on hover */}
                 <div className="absolute bottom-0 p-4 text-stone opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h2 className="text-xl font-semibold">{project.title}</h2>
-                  <p className="text-sm">{project.description}</p>
+                  <h2 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h2>
+                  <p className="text-sm mb-2">{project.description}</p>
+                  <a
+                    key={idx}
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block transition-colors duration-200 hover:text-pink-500"
+                    aria-label={`Open ${project.title} website`}
+                  >
+                    {project.link}
+                  </a>
                 </div>
               </div>
             ))}
