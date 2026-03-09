@@ -7,14 +7,6 @@ import project15 from "../assets/images/img15.jpg";
 import project16 from "../assets/images/img16.jpg";
 import project17 from "../assets/images/img17.jpg";
 import project18 from "../assets/images/img18.jpg";
-import project19 from "../assets/images/img19.jpg";
-import project20 from "../assets/images/img20.jpg";
-import project21 from "../assets/images/img21.jpg";
-import project22 from "../assets/images/img22.jpg";
-import project23 from "../assets/images/img23.jpg";
-import project24 from "../assets/images/img24.jpg";
-import project25 from "../assets/images/img25.jpg";
-import project26 from "../assets/images/img26.jpg";
 import "./HideScrollbar.css";
 
 const projects = [
@@ -22,81 +14,49 @@ const projects = [
     title: "Project 1",
     description: "A short description about project 1.",
     image: project11,
+    link: "https://peak2port.vercel.app/",
   },
   {
     title: "Project 2",
     description: "A short description about project 2.",
     image: project12,
+    link: "https://infoteam-solution.vercel.app/",
   },
   {
     title: "Project 3",
     description: "A short description about project 3.",
     image: project13,
+    link: "",
   },
   {
     title: "Project 4",
     description: "A short description about project 4.",
     image: project14,
+    link: "",
   },
   {
     title: "Project 5",
     description: "A short description about project 5.",
     image: project15,
+    link: "",
   },
   {
     title: "Project 6",
     description: "A short description about project 6.",
     image: project16,
+    link: "",
   },
   {
     title: "Project 7",
     description: "A short description about project 7.",
     image: project17,
+    link: "",
   },
   {
     title: "Project 8",
     description: "A short description about project 8.",
     image: project18,
-  },
-  {
-    title: "Project 9",
-    description: "A short description about project 9.",
-    image: project19,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project20,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project21,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project22,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project23,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project24,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project25,
-  },
-  {
-    title: "Project 10",
-    description: "A short description about project 10.",
-    image: project26,
+    link: "",
   },
 ];
 
