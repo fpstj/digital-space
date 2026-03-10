@@ -4,40 +4,61 @@ import "./HideScrollbar.css"; // Optional, depending on your existing styles
 
 const aboutContent = [
   {
-    title: "Hi, I'm a Front-End Developer",
-    text: "I’m a passionate frontend developer with 4 years of hands-on experience crafting modern, scalable, and user-focused web applications. My work revolves around creating responsive and elegant user interfaces, building internal dashboards, and integrating RESTful APIs for seamless data flow. I take pride in writing clean, maintainable code and transforming complex ideas into intuitive digital experiences that not only function smoothly but also delight users across all devices.",
+    title: "About me",
+    text: "Hi, I’m a Front-End Developer with 4 years of experience building modern, responsive web applications. I specialize in creating scalable user interfaces using React and TypeScript, focusing on performance, usability, and clean, maintainable code.",
+
+    text2:
+      "My work often includes developing dashboards, internal tools, and business applications that integrate with RESTful APIs and help streamline workflows. I enjoy transforming complex ideas into intuitive digital experiences that work smoothly across devices.",
+
+    text3:
+      "Before focusing fully on development, I spent nearly a decade working in graphic and UI/UX design, which helps me approach development with a strong understanding of layout, usability, and visual clarity.",
+
+    text4:
+      "Currently, I’m expanding my skill set into full-stack development, learning Next.js and Node.js and building side projects to deepen my understanding of modern web architecture.",
   },
-  {
-    title: "What I Do",
-    text: "I specialize in building robust single-page applications (SPAs) using React.js and TypeScript. With a strong command of modern CSS frameworks like Tailwind and Bootstrap, I design pixel-perfect, mobile-first layouts. My day-to-day includes collaborating with designers and backend developers, optimizing UI performance, and managing version control with Git and Azure DevOps. I take a proactive approach to problem-solving and always aim to deliver maintainable and scalable front-end solutions that meet both business and user needs.",
-  },
+  // {
+  //   title: "Hi, I'm a Front-End Developer",
+  //   text: "I’m a frontend developer with 4 years of experience building modern, responsive web applications. I focus on creating clean, scalable interfaces and transforming complex ideas into intuitive user experiences. My work includes developing dashboards, internal systems, and interactive applications that integrate seamlessly with backend services.",
+  //   text2:
+  //     "I care deeply about code quality, usability, and performance, and I enjoy building interfaces that are both visually polished and technically reliable across devices.",
+  // },
+  // {
+  //   title: "What I Do",
+  //   text: "I build single-page applications (SPAs) using React.js and TypeScript, focusing on maintainable architecture and responsive design. My work often involves developing dashboards, internal tools, and business applications that interact with RESTful APIs.",
+  //   text2:
+  //     "I collaborate closely with designers and backend teams, optimize UI performance, and ensure code quality through modern development practices and version control.",
+  // },
   {
     title: "Tech I Work With",
-    text: "React.js, TypeScript, JavaScript (ES6+), HTML, CSS/SCSS, Bootstrap, Tailwind, Git, Azure DevOps, RESTful APIs, Figma. I have hands-on experience in building dashboards, internal systems, and scalable component libraries.",
+    text: "React.js",
+    text2: "TypeScript / JavaScript",
+    text3: "HTML / CSS / SCSS",
+    text4: "Tailwind / Bootstrap",
+    text5: "Git / Azure DevOps",
+    text6: "REST APIs",
+    text7: "Figma",
   },
+  // {
+  //   title: "Design Background",
+  //   text: "Before focusing fully on development, I spent nearly a decade working in graphic and UI design. This background helps me approach development with a strong understanding of layout, usability, and visual clarity.",
+  // },
+  // {
+  //   title: "Projects I'm Proud Of",
+  //   text: "I’ve worked on a range of real-world applications including telephony management systems, service dashboards, booking platforms, datacenter monitoring tools, and secure file platforms. These projects helped businesses streamline workflows and manage complex processes through intuitive interfaces.",
+  // },
+  // {
+  //   title: "What I'm Learning",
+  //   text: "I’m currently expanding my skills toward full-stack development, focusing on Next.js and Node.js. I enjoy building side projects to experiment with new tools and deepen my understanding of modern web architecture.",
+  // },
   {
-    title: "My Workflow & Tools",
-    text: "I believe in clean, maintainable code and a thoughtful development process. My workflow includes Git version control, CI/CD pipelines, collaborative documentation (Notion), and Figma for prototyping and design.",
-  },
-  {
-    title: "Design Background",
-    text: "With nearly a decade of experience in graphic and UI/UX design, I bring a user-centered perspective to development. I create wireframes, interactive prototypes, and visually compelling interfaces using Figma.",
-  },
-  {
-    title: "Projects I'm Proud Of",
-    text: "I’ve worked on a variety of real-world projects including telephony management systems, service management dashboards, travel agency booking tools, and secure file upload/download platforms. I’ve also built apps for business continuity and datacenter monitoring. These projects gave me the opportunity to enhance productivity, streamline workflows, and create intuitive, reliable interfaces for both internal and client-facing use. Every project has taught me something new and pushed me to grow as both a developer and a problem-solver.",
-  },
-  {
-    title: "What I'm Learning",
-    text: "I’m currently diving deeper into full-stack development by learning Node.js and Next.js, aiming to become more versatile in my skillset. I enjoy exploring new tools and frameworks through hands-on projects, like building a full-featured translation management app with authentication and tracking features. On the side, I frequently complete React-based courses and mini-projects to sharpen my state management, hooks usage, and best practices. I believe learning never stops, especially in this field.",
-  },
-  {
-    title: "Languages I Speak",
-    text: "Macedonian (native), English (fluent), Slovenian (fluent). I can also communicate in Serbian and mostly understand Croatian, Bosnian, Montenegrin, and Bulgarian.",
+    title: "Languages",
+    text: "Macedonian (native)",
+    text2: "Slovenian (fluent)",
+    text3: "Serbian (conversational)",
   },
   {
     title: "Outside of Work",
-    text: "Beyond code, I’m a swimmer, a family man, and a curious soul. I enjoy nature, discovering new music, binge-worthy shows, and always dreaming up the next travel destination.",
+    text: "Beyond code, I enjoy traveling, exploring nature, discovering new music, and spending time with family.",
   },
 ];
 
@@ -70,6 +91,36 @@ const About: React.FC = () => {
                   <p className="text-base text-stone leading-relaxed">
                     {section.text}
                   </p>
+                  {section.text2 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text2}
+                    </p>
+                  )}
+                  {section.text3 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text3}
+                    </p>
+                  )}
+                  {section.text4 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text4}
+                    </p>
+                  )}
+                  {section.text5 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text5}
+                    </p>
+                  )}
+                  {section.text6 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text6}
+                    </p>
+                  )}
+                  {section.text7 && (
+                    <p className="text-base text-stone leading-relaxed mt-4">
+                      {section.text7}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>

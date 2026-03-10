@@ -1,17 +1,26 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const EMAILJS_SERVICE_ID =
+  import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "service_qjsetxi";
+const EMAILJS_TEMPLATE_ID =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "template_kah3m7m";
+const EMAILJS_PUBLIC_KEY =
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "CpvU8edlEliPWLPPY";
 
 const Contact: React.FC = () => {
   const [nameError, setNameError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
+  const [titleFocused, setTitleFocused] = useState(false);
   const [nameFocused, setNameFocused] = useState(false);
   const [emailFocused, setEmailFocused] = useState(false);
   const [messageFocused, setMessageFocused] = useState(false);
 
   // State to store form data
   const [formData, setFormData] = useState({
+    title: "",
     name: "",
     email: "",
     message: "",
@@ -19,7 +28,7 @@ const Contact: React.FC = () => {
 
   // Handle form input changes
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -33,6 +42,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     // Reset error messages
+    setTitleFocused(false);
     setNameError(null);
     setEmailError(null);
     setMessageError(null);
@@ -69,23 +79,33 @@ const Contact: React.FC = () => {
 
     try {
       const result = await emailjs.send(
-        "service_wiztl2n",
-        "template_e5bewxr",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
+          subject: formData.title,
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           reply_to: formData.email,
         },
-        "CpvU8edlEliPWLPPY"
+        {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        },
       );
 
       console.log("Email successfully sent!", result.text);
       alert("Your message was sent successfully!");
 
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ title: "", name: "", email: "", message: "" });
     } catch (error) {
       console.error("Failed to send email:", error);
+
+      // EmailJS errors are often shaped like { status: number, text: string }
+      if (typeof error === "object" && error !== null) {
+        const anyError = error as { status?: unknown; text?: unknown };
+        console.error("EmailJS error status:", anyError.status);
+        console.error("EmailJS error text:", anyError.text);
+      }
       alert("Something went wrong. Please try again later.");
     }
   };
@@ -114,6 +134,20 @@ const Contact: React.FC = () => {
 
         <form className="w-full md:w-2xl" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4">
+            <input
+              type="text"
+              name="title"
+              placeholder={titleFocused ? "" : "Subject"}
+              className="px-6 py-2 border text-stone-50 border-stone-50 bg-transparent rounded-sm"
+              value={formData.title}
+              onChange={handleInputChange}
+              onFocus={() => setTitleFocused(true)}
+              onBlur={() => setTitleFocused(false)}
+              required
+            />
+            {/* {title && (
+              <span className="text-red-500 text-sm">{titleError}</span>
+            )} */}
             <input
               type="text"
               name="name"
